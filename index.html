@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ark Community</title>
+<meta name="description" content="Ark Community: one room with everyone in it, plus three leaders you choose. Members only. $25 a week, first week free with a leader's code.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ark Community">
+<meta property="og:description" content="Ark Community: one room with everyone in it, plus three leaders you choose. Members only. $25 a week, first week free with a leader's code.">
+<meta property="og:url" content="https://joinarknow.com/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://joinarknow.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a0a'/%3E%3Cpath d='M6 11a10 10 0 0 0 20 0' fill='none' stroke='%23f2f1ee' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,700..900&family=Barlow+Condensed:wght@500;600&family=Inter:opsz,wght@14..32,400..700&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+:root{
+  --bg:#0a0a0a;
+  --panel:#111111;
+  --panel-hi:#171717;
+  --line:rgba(255,255,255,.09);
+  --line-hi:rgba(255,255,255,.2);
+  --white:#f2f1ee;
+  --gray:#8d8d8d;
+  --gray-lo:#5e5e5e;
+  --dim:#2f2f2f;
+  --amber:#ffb86b;
+  --coral:#ff6b4a;
+  --violet:#a36bff;
+  --sky:#56b0ff;
+  --glint:linear-gradient(95deg,var(--amber),var(--coral) 40%,var(--violet) 75%,var(--sky));
+  --display:"Big Shoulders","Big Shoulders Display","Oswald","Arial Narrow",Impact,sans-serif;
+  --label:"Barlow Condensed","Arial Narrow","Helvetica Neue",sans-serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --gutter:max(16px,5vw);
+  --maxw:1180px;
+  --nav-h:56px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--white);font-family:var(--sans);font-size:17px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-optical-sizing:auto;overflow-x:clip}
+/* film grain */
+body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+a{color:inherit}
+:focus-visible{outline:1.5px solid var(--white);outline-offset:3px}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.section{padding-block:clamp(104px,15vw,180px);position:relative}
+.rule{border-top:1px solid var(--line)}
+
+/* ---------- type ---------- */
+h1,h2,h3{margin:0;font-weight:800;text-wrap:balance}
+.label{margin:0;display:inline-flex;align-items:center;gap:10px;font-family:var(--label);font-weight:500;font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:var(--gray)}
+.label .dot{width:6px;height:6px;border-radius:50%;background:var(--glint);flex:none}
+.display{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(58px,13.5vw,176px);line-height:.88;letter-spacing:-.005em}
+.headline{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(50px,9.4vw,120px);line-height:.9;letter-spacing:-.004em}
+.serif{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.01em;font-size:1.02em;padding-inline-end:.04em}
+.lead{margin:0;font-size:clamp(18px,2vw,21px);line-height:1.5;color:var(--gray);max-width:36ch;text-wrap:pretty}
+.lead strong{color:var(--white);font-weight:600}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding-inline:28px;border-radius:2px;border:0;cursor:pointer;
+  font-family:var(--label);font-weight:600;font-size:17px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;
+  transition:background-color .25s,color .25s,box-shadow .25s,scale .2s var(--ease)}
+.btn:active{scale:.98}
+.btn-white{background:var(--white);color:#0a0a0a}
+.btn-white:hover{background:#fff}
+.btn-line{background:transparent;color:var(--white);box-shadow:inset 0 0 0 1px var(--line-hi)}
+.btn-line:hover{box-shadow:inset 0 0 0 1px var(--white)}
+.textlink{font-family:var(--label);font-weight:500;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color .2s}
+.textlink:hover{color:var(--white)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;height:var(--nav-h);display:flex;align-items:center;gap:28px;padding-inline:var(--gutter);
+  background:rgba(10,10,10,.72);border-bottom:1px solid var(--line);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:.06em;text-transform:uppercase}
+.brand svg{width:24px;height:14px;flex:none}
+.nav .links{display:flex;gap:28px;margin-inline-start:auto}
+.nav .links a{font-family:var(--label);font-weight:500;font-size:14px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--gray);transition:color .2s}
+.nav .links a:hover{color:var(--white)}
+.nav .code-btn{height:34px;padding-inline:16px;font-size:14px;letter-spacing:.2em}
+@media (max-width:700px){.nav .links{display:none}.nav .code-btn{margin-inline-start:auto}}
+
+/* ---------- scroll stages ---------- */
+.track{position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+
+/* hero */
+.hero{height:175vh}
+.hero .stage{display:grid;place-items:center;
+  background:radial-gradient(ellipse 70% 55% at 50% -8%,rgba(255,255,255,.09),transparent 70%),radial-gradient(ellipse at 50% 50%,transparent 55%,rgba(0,0,0,.6))}
+.hero-copy{position:relative;z-index:2;text-align:center;padding-inline:var(--gutter);display:grid;justify-items:center;gap:22px;
+  margin-top:calc(var(--nav-h) * -.5);
+  transform:translateY(calc(var(--p,0) * -80px)) scale(calc(1 - var(--p,0) * .08));opacity:calc(1 - var(--p,0) * 1.6)}
+.hero-copy .lead{max-width:34ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:16px 30px;align-items:center;justify-content:center;margin-top:6px}
+.micro{margin:0;font-size:14px;color:var(--gray-lo)}
+
+.bowl{position:absolute;left:50%;top:50%;width:min(172vw,104svh);aspect-ratio:1;pointer-events:none;z-index:1;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 44%,#000 66%);mask-image:linear-gradient(to bottom,transparent 44%,#000 66%);
+  transform:translate(-50%,-41%) translateY(calc(var(--p,0) * -24svh)) scale(calc(1 + var(--p,0) * .6))}
+.ring{position:absolute;inset:6%;border-radius:50%;
+  background:conic-gradient(from 0deg,rgba(242,241,238,.35) 0deg,rgba(242,241,238,.55) 110deg,rgba(242,241,238,.9) 158deg,var(--amber) 172deg,var(--coral) 180deg,var(--amber) 188deg,rgba(242,241,238,.9) 202deg,rgba(242,241,238,.55) 250deg,rgba(242,241,238,.35) 360deg);
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 1.6px),#000 calc(100% - 1.2px));
+  mask:radial-gradient(farthest-side,transparent calc(100% - 1.6px),#000 calc(100% - 1.2px))}
+.halo{position:absolute;inset:6%;filter:blur(26px);opacity:calc(.45 + var(--p,0) * .35)}
+.halo .ring{inset:0;
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 28px),#000 calc(100% - 16px),#000 calc(100% - 5px),transparent 100%);
+  mask:radial-gradient(farthest-side,transparent calc(100% - 28px),#000 calc(100% - 16px),#000 calc(100% - 5px),transparent 100%)}
+.pool{position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 50% 100%,rgba(255,150,90,.16),rgba(255,255,255,.03) 26%,transparent 50%)}
+
+/* statement — the Big Idea */
+.statement-track{height:260vh}
+.statement-track .stage{display:grid;place-items:center}
+.statement{margin:0;max-width:min(980px,100%);padding-inline:var(--gutter);font-size:clamp(25px,4.4vw,52px);font-weight:600;line-height:1.14;letter-spacing:-.028em;color:var(--gray);text-wrap:pretty}
+.statement .w{color:var(--dim);transition:color .45s ease}
+.statement .w.on{color:var(--white)}
+
+/* the ark beat */
+.ark-line{text-align:center}
+.ark-line-inner{display:grid;gap:18px;justify-items:center;scale:calc(.92 + var(--v,1) * .08)}
+.ark-big{margin:0;max-width:14ch;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(52px,10vw,132px);line-height:.9;text-wrap:balance}
+
+/* main room */
+.room-track{height:260vh}
+.room-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.room-stage::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,var(--bg) 0%,rgba(10,10,10,.93) 38%,rgba(10,10,10,0) 60%)}
+.room-copy{position:relative;z-index:2;height:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);display:flex;flex-direction:column;justify-content:flex-start;padding-top:calc(var(--nav-h) + 5svh)}
+.room-copy .inner{max-width:31rem;display:grid;gap:18px}
+.facts{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:12px;font-size:15px;color:var(--gray)}
+.facts b{display:block;font-family:var(--label);font-weight:600;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:1px}
+@media (min-width:860px){
+  .room-stage::before{background:linear-gradient(90deg,var(--bg) 0%,rgba(10,10,10,.9) 34%,rgba(10,10,10,0) 55%)}
+  .room-copy{justify-content:center;padding-top:0}
+}
+@media (max-width:859px) and (max-height:780px){.facts{display:none}}
+
+/* ---------- lanes ---------- */
+.lanes-head{display:grid;gap:22px;max-width:44rem;margin-bottom:clamp(40px,6vw,64px)}
+.picker{display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;font-family:var(--label);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray)}
+.pips{display:flex;gap:6px}
+.pip{width:22px;height:3px;background:var(--dim);transition:background .3s}
+.pip.on{background:var(--white)}
+.lane-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (min-width:680px){.lane-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.lane-grid{grid-template-columns:repeat(3,1fr)}}
+.lane{appearance:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer;background:var(--bg);
+  padding:30px 28px 26px;display:flex;flex-direction:column;gap:12px;min-height:300px;position:relative;
+  translate:0 calc((1 - var(--v,1)) * 30px);transition:background-color .35s var(--ease),opacity .3s}
+.lane:hover{background:var(--panel)}
+.lane::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px transparent;transition:box-shadow .3s}
+.lane[aria-pressed="true"]{background:var(--panel-hi)}
+.lane[aria-pressed="true"]::after{box-shadow:inset 0 0 0 1px var(--white)}
+.lane.locked{opacity:.38}
+.lane-top{display:flex;justify-content:space-between;align-items:center}
+.glyph{width:30px;height:30px;flex:none;color:var(--white)}
+.members{font-family:var(--label);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gray-lo)}
+.lane h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(34px,3.4vw,44px);line-height:.92;margin-top:18px}
+.who{margin:0;font-family:var(--label);font-weight:500;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray)}
+.what{margin:0;font-size:16px;line-height:1.5;color:var(--gray);max-width:30ch}
+.lane-foot{margin-top:auto;padding-top:14px;display:flex;align-items:center;justify-content:space-between;font-family:var(--label);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-lo)}
+.check{width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line-hi);display:grid;place-items:center;position:relative;transition:background .3s}
+.check svg{width:13px;height:13px;opacity:0;transition:opacity .2s}
+.lane[aria-pressed="true"] .check{background:var(--white);box-shadow:none}
+.lane[aria-pressed="true"] .check svg{opacity:1}
+.lane[aria-pressed="true"] .check::after{content:"";position:absolute;right:-2px;top:-2px;width:7px;height:7px;border-radius:50%;background:var(--glint)}
+.lane.soon{cursor:default;background:var(--bg)}
+.lane.soon h3{color:var(--gray)}
+.pick-summary{margin-top:28px;min-height:52px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;font-size:16px;color:var(--gray)}
+.pick-summary strong{color:var(--white);font-weight:600}
+
+/* ---------- inside ---------- */
+.inside-head{display:grid;gap:22px;max-width:48rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-block:clamp(56px,8vw,100px);border-top:1px solid var(--line)}
+.stat{display:grid;gap:8px;align-content:start;padding-top:22px;padding-inline-end:12px;translate:0 calc((1 - var(--v,1)) * 26px)}
+.stat + .stat{border-left:1px solid var(--line);padding-inline-start:clamp(12px,3vw,32px)}
+.num{font-family:var(--display);font-weight:800;font-size:clamp(90px,17vw,220px);line-height:.8;font-variant-numeric:tabular-nums}
+.cap{font-family:var(--label);font-size:clamp(13px,1.4vw,16px);letter-spacing:.18em;text-transform:uppercase;color:var(--gray);line-height:1.35;max-width:16ch}
+.tiles{display:grid;gap:1px;grid-template-columns:1fr;background:var(--line);border:1px solid var(--line)}
+@media (min-width:860px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{background:var(--bg);padding:34px 30px 38px;display:grid;gap:12px;align-content:start;opacity:calc(.35 + var(--v,1) * .65)}
+.tile svg{width:30px;height:30px;color:var(--white)}
+.tile h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:32px;line-height:.95;margin-top:10px}
+.tile p{margin:0;color:var(--gray);font-size:16px;line-height:1.5}
+.live{fill:var(--coral);transform-origin:15px 15px;animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ---------- manifesto ---------- */
+.mani-head{display:grid;gap:22px}
+.mani{display:grid;gap:clamp(24px,3.2vw,38px);margin-top:clamp(56px,8vw,96px);max-width:27ch;font-size:clamp(24px,3.4vw,40px);font-weight:600;line-height:1.2;letter-spacing:-.026em}
+.ml{margin:0;color:var(--gray);transition:color .55s ease}
+.js .ml{color:var(--dim)}
+.js .ml.on{color:var(--white)}
+.ml.label-line{font-family:var(--label);font-weight:500;font-size:15px;letter-spacing:.24em;text-transform:uppercase;color:var(--gray)}
+.js .ml.label-line,.js .ml.label-line.on{color:var(--gray)}
+.ml.belief{position:relative;padding-left:1.1em}
+.ml.belief::before{content:"";position:absolute;left:0;top:.62em;width:.55em;height:1px;background:currentColor}
+.ml.big{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.9em;line-height:.92;letter-spacing:0}
+
+/* ---------- welcome ---------- */
+.finale{position:relative;overflow:hidden;text-align:center;padding-block:clamp(120px,17vw,210px) clamp(110px,15vw,170px)}
+.finale .bowl{top:78%;width:min(150vw,980px);transform:translate(-50%,-50%)}
+.finale-copy{position:relative;z-index:2;display:grid;gap:30px;justify-items:center}
+.welcome-line{margin:0;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(76px,16vw,196px);line-height:.95;letter-spacing:-.02em;padding-inline:.06em}
+
+/* ---------- membership card ---------- */
+.price-head{display:grid;gap:22px;justify-items:center;text-align:center}
+.card-scene{perspective:1100px;margin:clamp(48px,7vw,80px) auto 0;max-width:470px}
+.member-card{position:relative;aspect-ratio:1.586;border-radius:18px;overflow:hidden;padding:clamp(20px,4.6vw,30px);
+  display:grid;grid-template-rows:auto 1fr auto;color:var(--white);
+  background:radial-gradient(120% 90% at 0% 0%,#232323 0%,#121212 45%,#0b0b0b 100%);
+  box-shadow:0 0 0 1px rgba(255,255,255,.12) inset,0 40px 80px rgba(0,0,0,.7),0 2px 0 rgba(255,255,255,.06) inset;
+  transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .5s var(--ease)}
+.member-card::before{content:"";position:absolute;inset:-40%;pointer-events:none;mix-blend-mode:screen;opacity:.55;
+  background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.08) 46%,rgba(255,184,107,.16) 50%,rgba(163,107,255,.12) 54%,rgba(86,176,255,.08) 57%,transparent 64%);
+  transform:translateX(calc((var(--v,1) - .5) * 70%))}
+.card-row{display:flex;justify-content:space-between;align-items:center;gap:14px;font-family:var(--label);font-size:clamp(10.5px,2.8vw,13px);letter-spacing:.22em;text-transform:uppercase;color:var(--gray)}
+.card-row span:last-child{text-align:right}
+.card-brand{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.08em;color:var(--white)}
+.card-brand svg{width:22px;height:13px}
+.card-price{align-self:center;display:flex;align-items:baseline;gap:10px}
+.amt{font-family:var(--display);font-weight:800;font-size:clamp(78px,20vw,112px);line-height:.8}
+.per{font-family:var(--label);font-size:16px;letter-spacing:.24em;text-transform:uppercase;color:var(--gray)}
+.join-panel{max-width:470px;margin:34px auto 0;display:grid;gap:26px}
+.includes{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.includes li{display:flex;gap:14px;align-items:baseline;font-size:16px;color:var(--gray);line-height:1.45}
+.includes li::before{content:"";flex:none;width:12px;height:1px;background:var(--white);transform:translateY(-4px)}
+.yours{margin:-6px 0 0;font-size:15px;color:var(--gray)}
+.yours strong{color:var(--white);font-weight:600}
+.code-form{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:26px}
+.code-form label{font-family:var(--label);font-weight:600;font-size:15px;letter-spacing:.22em;text-transform:uppercase}
+.code-form .sub{margin:-6px 0 4px;font-size:15px;color:var(--gray)}
+.field{display:flex;gap:10px;flex-wrap:wrap}
+.field input{flex:1 1 180px;min-width:0;height:54px;border-radius:2px;border:1px solid var(--line-hi);padding-inline:16px;background:#0d0d0d;color:var(--white);
+  font-family:var(--label);font-weight:600;font-size:20px;letter-spacing:.28em;text-transform:uppercase}
+.field input::placeholder{letter-spacing:.2em;color:var(--gray-lo);font-weight:500}
+.field input:focus{outline:none;border-color:var(--white);box-shadow:0 1px 0 0 var(--amber)}
+.field .btn{height:54px;flex:0 0 auto}
+.or{display:flex;align-items:center;gap:14px;font-family:var(--label);letter-spacing:.24em;text-transform:uppercase;color:var(--gray-lo);font-size:12px}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.fine{margin:0;font-size:13px;color:var(--gray-lo);line-height:1.6}
+.note{margin:0;min-height:1.5em;font-size:15px;color:var(--white)}
+
+/* ---------- faq ---------- */
+.faq{max-width:800px;margin:clamp(96px,13vw,150px) auto 0}
+.faq h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(44px,6vw,64px);line-height:.9;margin-bottom:26px}
+.faq details{border-top:1px solid var(--line);padding-block:22px}
+.faq details:last-of-type{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:clamp(18px,2vw,21px);font-weight:600;letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:300;font-size:28px;line-height:1;color:var(--gray);transition:rotate .3s var(--ease)}
+.faq details[open] summary::after{rotate:45deg}
+.faq details p{margin:12px 0 0;color:var(--gray);font-size:16px;max-width:60ch}
+
+.foot-bar{border-top:1px solid var(--line);padding-block:28px;font-family:var(--label);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-lo);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero,.statement-track,.room-track{height:auto}
+  .stage{position:relative;height:auto;min-height:100svh}
+  .statement-track .stage{padding-block:120px}
+  .hero-copy,.bowl,.lane,.stat,.tile,.ark-line-inner,.member-card,.member-card::before{transform:none;translate:none;scale:none;opacity:1}
+  .finale .bowl{transform:translate(-50%,-50%)}
+  .live{animation:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="glint" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffb86b"/><stop offset=".4" stop-color="#ff6b4a"/><stop offset=".75" stop-color="#a36bff"/><stop offset="1" stop-color="#56b0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Ark Community, back to top">
+    <svg viewBox="0 0 24 14" fill="none" aria-hidden="true"><path d="M2 2.5a10 10 0 0 0 20 0" stroke="url(#glint)" stroke-width="2.4" stroke-linecap="round"/></svg>
+    Ark
+  </a>
+  <nav class="links" aria-label="Sections">
+    <a href="#room">The room</a>
+    <a href="#lanes">Lanes</a>
+    <a href="#manifesto">Manifesto</a>
+    <a href="#join">Membership</a>
+  </nav>
+  <a class="btn btn-line code-btn" href="#join">Enter code</a>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="track hero" id="top" data-scene>
+    <div class="stage">
+      <div class="bowl" aria-hidden="true">
+        <div class="pool"></div>
+        <div class="halo"><div class="ring"></div></div>
+        <div class="ring"></div>
+      </div>
+      <div class="hero-copy">
+        <p class="label"><span class="dot"></span>Ark Community · Members only</p>
+        <h1 class="display">Find your people.<br>Pick your <span class="serif">three.</span></h1>
+        <p class="lead"><strong>One room with everyone in it,</strong> plus three leaders you choose. Each one brings a short course and a live call every week.</p>
+        <div class="cta-row">
+          <a class="btn btn-white" href="#join">Enter your code</a>
+          <a class="textlink" href="#join">Or join for $25/week</a>
+        </div>
+        <p class="micro">Your first week is free with a leader's code.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE BIG IDEA (verbatim, The Ark v02 deck) -->
+  <section class="track statement-track" id="why" data-scene>
+    <div class="stage">
+      <p class="statement" id="statement">Community is missing in today's culture—especially for entrepreneurs…<br>…We live in multimillion person cities<br>…Have thousands of friends on social media<br>Yet we lack depth of relationship.<br>We lack trust.<br>And we don't have enough people who truly have our back…<br>…or even people to simply “do life” with…<br>Especially ones who hold mutual values, vision, and standards for their lives.</p>
+    </div>
+  </section>
+
+  <!-- THE ARK (verbatim, v02 deck) -->
+  <section class="section ark-line">
+    <div class="wrap ark-line-inner" data-reveal>
+      <p class="label">The Ark…</p>
+      <p class="ark-big">…Is where you come to live your purpose. <span class="serif">In community.</span></p>
+    </div>
+  </section>
+
+  <!-- MAIN ROOM -->
+  <section class="track room-track" id="room" data-scene>
+    <div class="stage room-stage">
+      <canvas id="room-canvas" aria-hidden="true"></canvas>
+      <div class="room-copy">
+        <div class="inner">
+          <p class="label">The main room</p>
+          <h2 class="headline">Everyone in <span class="serif">one room.</span></h2>
+          <p class="lead"><strong>Every member shares the main room,</strong> whichever lanes they pick. It's where you meet the people working on the same things you are.</p>
+          <ul class="facts">
+            <li><b>Introductions</b>Say who you are and what you're working on.</li>
+            <li><b>Wins</b>Post your progress to people who saw you start.</li>
+            <li><b>Monthly all-hands</b>Every leader on one call, once a month.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANES -->
+  <section class="section rule" id="lanes">
+    <div class="wrap">
+      <div class="lanes-head">
+        <p class="label">The lanes</p>
+        <h2 class="headline">Pick your <span class="serif">three.</span></h2>
+        <p class="lead"><strong>A lane is one leader's corner of Ark,</strong> with a short course and a live call every week. Your membership includes three. Add more whenever you want.</p>
+        <div class="picker" aria-live="polite">
+          <div class="pips" aria-hidden="true"><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
+          <span id="pick-status">Try it. Tap three lanes.</span>
+        </div>
+      </div>
+
+      <div class="lane-grid" id="lane-grid">
+        <button class="lane" type="button" aria-pressed="false" data-reveal data-lane="Personal Development">
+          <div class="lane-top"><svg class="glyph" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M4 23 11 13l4 5 5-9 6 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="members">Members only</span></div>
+          <h3>Personal Development</h3>
+          <p class="who">with Parker</p>
+          <p class="what">Direction, habits, and the follow-through to act on them.</p>
+          <div class="lane-foot"><span>Course + weekly call</span><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="m2.5 7.3 3 3 6-6.6" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </button>
+        <button class="lane" type="button" aria-pressed="false" data-reveal data-lane="Business Coaching">
+          <div class="lane-top"><svg class="glyph" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M6 25v-7M12 25V12M18 25v-9M24 25V6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="members">Members only</span></div>
+          <h3>Business Coaching</h3>
+          <p class="who">with Parker &amp; Graeme</p>
+          <p class="what">For owners building a company that grows and holds together.</p>
+          <div class="lane-foot"><span>Course + weekly call</span><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="m2.5 7.3 3 3 6-6.6" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </button>
+        <button class="lane" type="button" aria-pressed="false" data-reveal data-lane="Yoga &amp; Meditation">
+          <div class="lane-top"><svg class="glyph" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="15" r="8" stroke="currentColor" stroke-width="1.2" opacity=".6"/><circle cx="15" cy="15" r="12.5" stroke="currentColor" stroke-width="1" opacity=".3"/></svg><span class="members">Members only</span></div>
+          <h3>Yoga &amp; Meditation</h3>
+          <p class="who">with Melissa</p>
+          <p class="what">Yoga and breath work to quiet a busy mind.</p>
+          <div class="lane-foot"><span>Course + weekly call</span><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="m2.5 7.3 3 3 6-6.6" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </button>
+        <button class="lane" type="button" aria-pressed="false" data-reveal data-lane="AI in Your Business">
+          <div class="lane-top"><svg class="glyph" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="4" y="4" width="22" height="22" rx="3" stroke="currentColor" stroke-width="1.3"/><path d="M15 8.5c.6 3.6 2.8 5.8 6.5 6.5-3.7.7-5.9 2.9-6.5 6.5-.6-3.6-2.8-5.8-6.5-6.5 3.7-.7 5.9-2.9 6.5-6.5Z" fill="currentColor"/></svg><span class="members">Members only</span></div>
+          <h3>AI in Your Business</h3>
+          <p class="who">with Luke &amp; Parker</p>
+          <p class="what">Put AI to work on the real jobs inside the business you already run.</p>
+          <div class="lane-foot"><span>Course + weekly call</span><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="m2.5 7.3 3 3 6-6.6" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </button>
+        <button class="lane" type="button" aria-pressed="false" data-reveal data-lane="AI in Your Life">
+          <div class="lane-top"><svg class="glyph" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="11" stroke="currentColor" stroke-width="1.3"/><path d="M15 8.5c.6 3.6 2.8 5.8 6.5 6.5-3.7.7-5.9 2.9-6.5 6.5-.6-3.6-2.8-5.8-6.5-6.5 3.7-.7 5.9-2.9 6.5-6.5Z" fill="currentColor"/></svg><span class="members">Members only</span></div>
+          <h3>AI in Your Life</h3>
+          <p class="who">with Luke &amp; Parker</p>
+          <p class="what">Use AI at home for planning, learning, health and money.</p>
+          <div class="lane-foot"><span>Course + weekly call</span><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="m2.5 7.3 3 3 6-6.6" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </button>
+        <div class="lane soon" data-reveal>
+          <div class="lane-top"><svg class="glyph" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 7v16M7 15h16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".6"/></svg><span class="members">Coming soon</span></div>
+          <h3>More lanes on the way</h3>
+          <p class="what">Health is next. We're building toward ten leaders.</p>
+        </div>
+      </div>
+
+      <div class="pick-summary" id="pick-summary" aria-live="polite">
+        <span id="pick-line">Pick three to see your membership.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIDE A LANE -->
+  <section class="section rule" id="inside">
+    <div class="wrap">
+      <div class="inside-head">
+        <p class="label">Inside every lane</p>
+        <h2 class="headline">Learn it once. Practise it <span class="serif">every week.</span></h2>
+      </div>
+      <div class="stats">
+        <div class="stat" data-reveal><span class="num">5</span><span class="cap">lanes at launch</span></div>
+        <div class="stat" data-reveal><span class="num">3</span><span class="cap">lanes in every membership</span></div>
+        <div class="stat" data-reveal><span class="num">1</span><span class="cap">room for everyone</span></div>
+      </div>
+      <div class="tiles">
+        <article class="tile" data-reveal>
+          <svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="2" y="5" width="26" height="20" rx="3" stroke="currentColor" stroke-width="1.3"/><path d="M12.5 11v8l6.5-4-6.5-4Z" fill="currentColor"/></svg>
+          <h3>A short course</h3>
+          <p>Filmed and edited with care, and short enough to finish.</p>
+        </article>
+        <article class="tile" data-reveal>
+          <svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="12" stroke="currentColor" stroke-width="1.3"/><circle class="live" cx="15" cy="15" r="4"/></svg>
+          <h3>A live call every week</h3>
+          <p>Bring questions, get coached, and hear how others in the lane are doing.</p>
+        </article>
+        <article class="tile" data-reveal>
+          <svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M6.5 15a8.5 8.5 0 1 0 2.5-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M8 4v5h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Recordings in the lane</h3>
+          <p>Missed a call? The recording is waiting for you in the lane.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO (verbatim, ROL Club Teaser v3) -->
+  <section class="section rule" id="manifesto">
+    <div class="wrap">
+      <div class="mani-head">
+        <p class="label">The manifesto</p>
+        <h2 class="headline">What We Stand For.</h2>
+      </div>
+      <div class="mani" id="mani">
+        <p class="ml">We are the creators. The risk-takers. The ones who build not for permission or applause, but because creation is the nature of life itself.</p>
+        <p class="ml">Ambition, vision, and power are not sins. These are signals. Signals that we are alive.</p>
+        <p class="ml label-line">We believe:</p>
+        <p class="ml belief">That wealth is not a vice, but a virtue—when earned by value and integrity.</p>
+        <p class="ml belief">That freedom is not granted by governments, but born from self-responsibility.</p>
+        <p class="ml belief">That community is not forced—it is chosen, forged in shared values and mutual excellence.</p>
+        <p class="ml belief">That energy—relational, creative, financial—is sacred. It must not be wasted, but offered to the highest possible aim.</p>
+        <p class="ml belief">That to love is not to lose yourself in another—but to stand whole, and offer yourself by choice.</p>
+        <p class="ml belief">That your highest potential is not just your right—it is your duty.</p>
+        <p class="ml belief">That to give from abundance is not loss, but overflow—and what you give returns multiplied when it's offered without need or agenda.</p>
+        <p class="ml">We are not here to escape the world. We are here to evolve it.</p>
+        <p class="ml">And as the old world trembles with change—bloated on bureaucracy, addiction, and victimhood—we do not fight it. We simply build what comes next.</p>
+        <p class="ml big">With clarity. With courage. With fire.</p>
+        <p class="ml big">This is not a rebellion.</p>
+        <p class="ml big">This is an expansion—of reason, of responsibility, of reverence.</p>
+        <p class="ml">You are not meant to ask for permission.</p>
+        <p class="ml">You are meant to remember who you are—and build accordingly.</p>
+        <p class="ml">This is a movement for the few who are ready.</p>
+        <p class="ml">We do not welcome all.</p>
+        <p class="ml">We welcome those who know the weight of leadership, the silence of integrity, and the thrill of building what others say is impossible.</p>
+        <p class="ml">If you're still waiting to be chosen—you're not ready.</p>
+        <p class="ml">But if you've already chosen yourself—</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="finale" id="welcome">
+    <div class="bowl" aria-hidden="true">
+      <div class="pool"></div>
+      <div class="halo"><div class="ring"></div></div>
+      <div class="ring"></div>
+    </div>
+    <div class="finale-copy wrap">
+      <p class="welcome-line">Welcome home.</p>
+      <a class="btn btn-white" href="#join">Enter your code</a>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section class="section rule" id="join">
+    <div class="wrap">
+      <div class="price-head">
+        <p class="label">Membership</p>
+        <h2 class="headline">Everything you picked, <span class="serif">one price.</span></h2>
+      </div>
+
+      <div class="card-scene">
+        <div class="member-card" id="member-card" data-reveal>
+          <div class="card-row">
+            <span class="card-brand"><svg viewBox="0 0 24 14" fill="none" aria-hidden="true"><path d="M2 2.5a10 10 0 0 0 20 0" stroke="url(#glint)" stroke-width="2.4" stroke-linecap="round"/></svg>ARK</span>
+            <span>Member</span>
+          </div>
+          <div class="card-price"><span class="amt">$25</span><span class="per">/ week</span></div>
+          <div class="card-row"><span>Main room + 3 lanes</span><span>Free week by code</span></div>
+        </div>
+      </div>
+
+      <div class="join-panel">
+        <ul class="includes">
+          <li>The main room, with every member</li>
+          <li>Three lanes you choose</li>
+          <li>Every course and weekly call in your lanes</li>
+          <li>More lanes whenever you want them</li>
+        </ul>
+        <p class="yours" id="yours" hidden></p>
+
+        <form class="code-form" id="code-form" novalidate>
+          <label for="code">Have a code from a leader?</label>
+          <p class="sub">It gives you your first week free.</p>
+          <div class="field">
+            <input id="code" name="code" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Leader code" maxlength="24">
+            <button class="btn btn-white" type="submit">Start my free week</button>
+          </div>
+          <div class="or">or</div>
+          <button class="btn btn-line" type="button" id="no-code">Join without a code</button>
+          <p class="note" id="note" role="status"></p>
+          <p class="fine">With a code, we take your card up front and your first week is free. Billing starts on day 8 at $25 a week. One free week per person. Without a code, billing starts the day you join.</p>
+        </form>
+      </div>
+
+      <div class="faq" id="faq">
+        <h2>Questions</h2>
+        <details><summary>What's a lane?</summary><p>It's one leader's space inside Ark. It holds their course, their weekly call, and the members who chose them.</p></details>
+        <details><summary>Where do I get a code?</summary><p>From one of the leaders, or from the person who invited you. The code gives you a free first week.</p></details>
+        <details><summary>Can I join without a code?</summary><p>Yes. You'll pay $25 a week starting the day you join.</p></details>
+        <details><summary>Can I add more lanes later?</summary><p>Yes. Add a lane any time from your account.</p></details>
+        <details><summary>Is there an app?</summary><p>The Ark app for iPhone and Android is on the way. You sign up here on the website, then log in on your phone.</p></details>
+        <details><summary>Who are the leaders?</summary><p>Parker, Graeme, Melissa and Luke are the first four. More are joining, starting with health.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-bar">
+    <span>© 2026 Ark Community</span>
+    <span>Preview build · Checkout not live</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp = (v,a,b)=>Math.min(b,Math.max(a,v));
+  const smooth = (a,b,x)=>{const t=clamp((x-a)/(b-a),0,1);return t*t*(3-2*t);};
+  const scenes = [...document.querySelectorAll('[data-scene]')];
+  const reveals = [...document.querySelectorAll('[data-reveal]')];
+  const maniLines = [...document.querySelectorAll('.ml')];
+
+  /* ---- the Big Idea: split into words ---- */
+  const statement = document.getElementById('statement');
+  const words = [];
+  (function walk(node){
+    [...node.childNodes].forEach(n=>{
+      if(n.nodeType===3){
+        const frag=document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(tok=>{
+          if(!tok) return;
+          if(/^\s+$/.test(tok)){frag.appendChild(document.createTextNode(tok));return;}
+          const s=document.createElement('span'); s.className='w'; s.textContent=tok; frag.appendChild(s); words.push(s);
+        });
+        n.replaceWith(frag);
+      } else if(n.nodeType===1){ walk(n); }
+    });
+  })(statement);
+
+  /* ---- main room canvas ---- */
+  const cv = document.getElementById('room-canvas');
+  const ctx = cv.getContext('2d');
+  const roomScene = document.getElementById('room');
+  let W=0,H=0,members=[],leaders=[],youIdx=0,roomP=0,running=false,roomVisible=false;
+  function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+  function layout(){
+    const r=cv.getBoundingClientRect(); const dpr=Math.min(window.devicePixelRatio||1,2);
+    W=r.width; H=r.height; cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0);
+    const wide=W>=860;
+    const R=wide? Math.min(W*0.2,H*0.32) : Math.min(W*0.34,H*0.165);
+    const cx=wide? W*0.7 : W*0.5, cy=wide? H*0.54 : H-R-H*0.045;
+    const N=wide? 170 : 110; const rand=rng(7); const TAU=Math.PI*2;
+    members=[];
+    for(let i=0;i<N;i++){
+      const a=i/N*TAU+rand()*0.05, rr=R*(0.93+rand()*0.14);
+      members.push({sx:rand()*W, sy:(wide? rand()*H : H*0.28+rand()*H*0.72), tx:cx+Math.cos(a)*rr, ty:cy+Math.sin(a)*rr,
+        s:0.9+rand()*1.2, ph:rand()*TAU, lead:((Math.round((a+Math.PI/2)/(TAU/5))%5)+5)%5});
+    }
+    youIdx=Math.floor(N*0.36);
+    leaders=[]; for(let k=0;k<5;k++){const a=-Math.PI/2+k*TAU/5; leaders.push({x:cx+Math.cos(a)*R*0.42,y:cy+Math.sin(a)*R*0.42});}
+  }
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+    const p=reduce?1:roomP, e=smooth(0.06,0.62,p), drift=reduce?0:1;
+    const la=smooth(0.42,0.74,p), k=smooth(0.62,0.92,p);
+    const pos=members.map(m=>({
+      x:m.sx+(m.tx-m.sx)*e+Math.sin(t*0.0005+m.ph)*7*drift*(1-e*0.75),
+      y:m.sy+(m.ty-m.sy)*e+Math.cos(t*0.00045+m.ph)*7*drift*(1-e*0.75)}));
+    if(k>0){
+      ctx.lineWidth=0.5; ctx.strokeStyle=`rgba(242,241,238,${0.13*k})`;
+      ctx.beginPath();
+      members.forEach((m,i)=>{ if(i%3) return; const L=leaders[m.lead]; ctx.moveTo(pos[i].x,pos[i].y); ctx.lineTo(L.x,L.y); });
+      ctx.stroke();
+    }
+    ctx.fillStyle=`rgba(242,241,238,${0.28+0.42*e})`;
+    members.forEach((m,i)=>{ if(i===youIdx) return; ctx.beginPath(); ctx.arc(pos[i].x,pos[i].y,m.s,0,Math.PI*2); ctx.fill(); });
+    if(la>0){
+      leaders.forEach(L=>{ const g=ctx.createRadialGradient(L.x,L.y,0,L.x,L.y,20); g.addColorStop(0,`rgba(242,241,238,${0.35*la})`); g.addColorStop(1,'rgba(242,241,238,0)');
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(L.x,L.y,20,0,Math.PI*2); ctx.fill();
+        ctx.fillStyle=`rgba(242,241,238,${la})`; ctx.beginPath(); ctx.arc(L.x,L.y,3.6,0,Math.PI*2); ctx.fill(); });
+    }
+    const y=pos[youIdx];
+    ctx.fillStyle='#ffb86b'; ctx.beginPath(); ctx.arc(y.x,y.y,3.4,0,Math.PI*2); ctx.fill();
+    ctx.strokeStyle='rgba(255,184,107,.55)'; ctx.lineWidth=1; ctx.beginPath(); ctx.arc(y.x,y.y,8,0,Math.PI*2); ctx.stroke();
+    ctx.font='600 12px "Barlow Condensed", "Arial Narrow", sans-serif'; ctx.fillStyle='rgba(242,241,238,.8)';
+    if(ctx.letterSpacing!==undefined) ctx.letterSpacing='2px';
+    ctx.fillText('YOU',y.x+13,y.y+4);
+  }
+  function loop(t){ if(!roomVisible||reduce){running=false;return;} draw(t); requestAnimationFrame(loop); }
+
+  /* ---- scroll driver ---- */
+  let ticking=false;
+  function update(){
+    ticking=false;
+    const vh=window.innerHeight;
+    scenes.forEach(s=>{
+      const r=s.getBoundingClientRect(); const len=r.height-vh;
+      const p=reduce?0:(len>0? clamp(-r.top/len,0,1) : 0);
+      s.style.setProperty('--p',p.toFixed(4)); s._p=p;
+      if(s===roomScene){ roomP=p; roomVisible=r.bottom>0&&r.top<vh; }
+    });
+    const sp=reduce?1:document.getElementById('why')._p;
+    const lit=Math.floor(clamp(sp/0.8,0,1)*words.length+0.001);
+    words.forEach((w,i)=>w.classList.toggle('on',i<lit));
+    reveals.forEach(el=>{ const r=el.getBoundingClientRect(); const v=reduce?1:clamp((vh-r.top)/(vh*0.55),0,1); el.style.setProperty('--v',v.toFixed(3)); });
+    maniLines.forEach(l=>{ l.classList.toggle('on', reduce || l.getBoundingClientRect().top < vh*0.7); });
+    if(reduce){ draw(0); }
+    else if(roomVisible&&!running){ running=true; requestAnimationFrame(loop); }
+  }
+  const req=()=>{ if(!ticking){ ticking=true; requestAnimationFrame(update); } };
+  addEventListener('scroll',req,{passive:true});
+  addEventListener('resize',()=>{ layout(); draw(performance.now()); req(); });
+  layout(); update(); draw(0);
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(()=>draw(performance.now())); }
+
+  /* ---- membership card tilt (pointer devices) ---- */
+  const card=document.getElementById('member-card');
+  if(!reduce && matchMedia('(hover:hover)').matches){
+    card.addEventListener('pointermove',e=>{ const r=card.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      card.style.setProperty('--ry',(x*10).toFixed(2)+'deg'); card.style.setProperty('--rx',(-y*8).toFixed(2)+'deg'); });
+    card.addEventListener('pointerleave',()=>{ card.style.setProperty('--ry','0deg'); card.style.setProperty('--rx','0deg'); });
+  }
+
+  /* ---- lane picker ---- */
+  const picks=[]; const lanes=[...document.querySelectorAll('button.lane')];
+  const pips=[...document.querySelectorAll('.pip')];
+  const status=document.getElementById('pick-status'); const line=document.getElementById('pick-line');
+  const yours=document.getElementById('yours');
+  const listText=a=>a.length<2? a.join('') : a.slice(0,-1).join(', ')+' and '+a[a.length-1];
+  function render(msg){
+    lanes.forEach(b=>{ const on=picks.includes(b.dataset.lane); b.setAttribute('aria-pressed',on?'true':'false'); b.classList.toggle('locked',!on&&picks.length===3); });
+    pips.forEach((p,i)=>p.classList.toggle('on',i<picks.length));
+    status.textContent = msg || (picks.length===0? 'Try it. Tap three lanes.' : picks.length<3? `${picks.length} of 3 picked` : 'Three picked. Tap one to swap it out.');
+    if(picks.length===3){
+      line.innerHTML=''; const t=document.createElement('span'); t.innerHTML='Your three: <strong></strong>'; t.querySelector('strong').textContent=listText(picks)+'.';
+      const a=document.createElement('a'); a.className='textlink'; a.href='#join'; a.textContent='See membership';
+      line.append(t,' ',a);
+      yours.hidden=false; yours.innerHTML='Your three: <strong></strong>'; yours.querySelector('strong').textContent=listText(picks);
+    } else {
+      line.textContent= picks.length? `Pick ${3-picks.length} more to see your membership.` : 'Pick three to see your membership.';
+      yours.hidden=true;
+    }
+  }
+  lanes.forEach(b=>b.addEventListener('click',()=>{
+    const n=b.dataset.lane, i=picks.indexOf(n);
+    if(i>-1){ picks.splice(i,1); render(); return; }
+    if(picks.length===3){ render("You've picked three. Tap one of them to swap it out."); return; }
+    picks.push(n); render();
+  }));
+
+  /* ---- sign-up (preview only) ---- */
+  const form=document.getElementById('code-form'), code=document.getElementById('code'), note=document.getElementById('note');
+  form.addEventListener('submit',e=>{
+    e.preventDefault(); const c=code.value.trim().toUpperCase();
+    note.textContent = c? `Checkout isn't live yet. At launch, code ${c} will start your free week.` : 'Enter the code a leader gave you, or join without one.';
+    if(!c) code.focus();
+  });
+  document.getElementById('no-code').addEventListener('click',()=>{ note.textContent="Checkout isn't live yet. At launch, this starts your membership at $25 a week."; });
+})();
+</script>
+</body>
+</html>
