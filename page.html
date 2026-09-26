@@ -303,311 +303,137 @@ h1,h2,h3{margin:0;font-weight:800;text-wrap:balance}
 .apply input.code{font-family:var(--label);font-weight:600;font-size:18px;letter-spacing:.26em;text-transform:uppercase}
 .apply input:focus,.apply textarea:focus{outline:none;border-color:var(--white);box-shadow:0 1px 0 0 var(--amber)}
 .apply .btn{width:100%}
+
+/* ---------- v4 founding 100 ---------- */
+.hero{height:120vh}
+.wordmark{font-family:var(--display);font-weight:800;font-size:clamp(120px,30vw,340px);line-height:.78;letter-spacing:.02em;margin:0}
+.hero-copy{gap:26px}
+.hero-line{margin:0;font-size:clamp(19px,2.2vw,24px);color:var(--gray);max-width:30ch;line-height:1.4}
+.hero-line .serif{color:var(--white)}
+.one-line{min-height:70vh;display:grid;place-items:center;text-align:center}
+.one-line p{margin:0;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(52px,10vw,136px);line-height:.9;max-width:12ch;opacity:calc(.25 + var(--v,1) * .75);scale:calc(.96 + var(--v,1) * .04)}
+.one-line p span{display:block}
+.blocks{display:grid;gap:1px;background:var(--line);border-block:1px solid var(--line)}
+@media (min-width:760px){.blocks{grid-template-columns:repeat(4,1fr)}}
+.block{background:var(--bg);padding:clamp(28px,4vw,44px) 24px;display:grid;gap:14px;align-content:start;min-height:130px}
+@media (min-width:760px){.block{min-height:220px}}
+.block .k{font-family:var(--label);font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--gray-lo)}
+.block p{margin:0;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(30px,3vw,40px);line-height:.95}
+.request{max-width:560px;margin-inline:auto;display:grid;gap:26px;text-align:center;justify-items:center}
+.request .apply{width:100%;text-align:left}
+.foot-bar a{text-decoration:none}
+.foot-bar a:hover{color:var(--white)}
+.mani-wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.mani-wrap .full-mani{border-top:0;margin:0;padding:0 0 60px}
 </style>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="glint" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#ffb86b"/><stop offset=".4" stop-color="#ff6b4a"/><stop offset=".75" stop-color="#a36bff"/><stop offset="1" stop-color="#56b0ff"/>
-    </linearGradient>
-  </defs>
-</svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="glint" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffb86b"/><stop offset=".4" stop-color="#ff6b4a"/><stop offset=".75" stop-color="#a36bff"/><stop offset="1" stop-color="#56b0ff"/></linearGradient></defs></svg>
 
 <header class="nav" id="nav">
-  <a class="brand" href="#top" aria-label="Ark Community, back to top">
-    <svg viewBox="0 0 24 14" fill="none" aria-hidden="true"><path d="M2 2.5a10 10 0 0 0 20 0" stroke="url(#glint)" stroke-width="2.4" stroke-linecap="round"/></svg>
-    Ark
-  </a>
-  <nav class="links" aria-label="Sections">
-    <a href="#how">How it works</a>
-    <a href="#leaders">Leaders</a>
-    <a href="#manifesto">Manifesto</a>
-  </nav>
-  <a class="btn btn-line code-btn" href="#apply">Apply</a>
+  <a class="brand" href="#top" aria-label="Ark, back to top"><svg viewBox="0 0 24 14" fill="none" aria-hidden="true"><path d="M2 2.5a10 10 0 0 0 20 0" stroke="url(#glint)" stroke-width="2.4" stroke-linecap="round"/></svg>Ark</a>
+  <a class="btn btn-line code-btn" href="#request" style="margin-inline-start:auto">Request an invitation</a>
 </header>
 
 <main>
-  <!-- HERO -->
   <section class="track hero" id="top" data-scene>
     <div class="stage">
-      <div class="bowl" aria-hidden="true">
-        <div class="pool"></div>
-        <div class="halo"><div class="ring"></div></div>
-        <div class="ring"></div>
-      </div>
+      <div class="bowl" aria-hidden="true"><div class="pool"></div><div class="halo"><div class="ring"></div></div><div class="ring"></div></div>
       <div class="hero-copy">
-        <p class="label"><span class="dot"></span>Ark · Membership by application</p>
-        <p class="pre">…We live in multimillion person cities<br>…Have thousands of friends on social media</p>
-        <h1 class="display">Yet we lack depth of <span class="serif">relationship.</span></h1>
-        <p class="lead"><strong>Ark is a private community.</strong> One room of people who hold your standards, and three leaders you choose.</p>
-        <div class="cta-row">
-          <a class="btn btn-white" href="#apply">Apply for membership</a>
-          <a class="textlink" href="#how">How it works</a>
-        </div>
-        <p class="micro">Members join in small cohorts.</p>
+        <h1 class="wordmark">Ark</h1>
+        <p class="hero-line">The Ark… is where you come to live your purpose. <span class="serif">In community.</span></p>
+        <p class="label"><span class="dot"></span>Founding 100 · By invitation</p>
+        <a class="btn btn-white" href="#request">Request an invitation</a>
       </div>
     </div>
   </section>
 
-  <!-- THE PROBLEM (verbatim, The Ark v02 deck) -->
-  <section class="track statement-track" id="why" data-scene>
-    <div class="stage">
-      <p class="statement" id="statement">We lack trust.<br>And we don't have enough people who truly have our back…<br>…or even people to simply “do life” with…<br>Especially ones who hold mutual values, vision, and standards for their lives.</p>
-    </div>
+  <section class="one-line">
+    <p data-reveal><span>Yet we lack</span><span>depth of</span><span class="serif" style="text-transform:none">relationship.</span></p>
   </section>
 
-  <!-- THE ARK (verbatim, v02 deck) -->
-  <section class="section ark-line">
-    <div class="wrap ark-line-inner" data-reveal>
-      <p class="label">The Ark…</p>
-      <p class="ark-big">…Is where you come to live your purpose. <span class="serif">In community.</span></p>
-    </div>
+  <section class="blocks" aria-label="Membership">
+    <div class="block"><span class="k">The room</span><p>Everyone in one room</p></div>
+    <div class="block"><span class="k">The leaders</span><p>Three you choose</p></div>
+    <div class="block"><span class="k">The rhythm</span><p>A live call every week</p></div>
+    <div class="block"><span class="k">The first</span><p>One hundred founders</p></div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section rule" id="how">
-    <div class="wrap">
-      <p class="label">How it works</p>
-      <div class="steps">
-        <div class="step" data-reveal><span class="n">01</span><h3>Apply</h3><p>Tell us what you're building. A code from a member or leader moves you to the front.</p></div>
-        <div class="step" data-reveal><span class="n">02</span><h3>Get in</h3><p>Members join in small cohorts, so every weekly call stays small enough to work.</p></div>
-        <div class="step" data-reveal><span class="n">03</span><h3>Pick your <span class="serif">three</span></h3><p>Three leaders, each with a short course and a live call every week. Everyone shares one main room.</p></div>
-      </div>
-
-      <div class="picker" aria-live="polite" style="margin-top:40px">
-        <div class="pips" aria-hidden="true"><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
-        <span id="pick-status">Try it. Tap three lanes.</span>
-      </div>
-      <div class="lane-grid" id="lane-grid">
-        <button class="lane" type="button" aria-pressed="false" data-lane="Personal Development"><h3>Personal Development</h3><p class="who">with Parker</p><div class="lane-foot"><span>Course + weekly call</span><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="m2.5 7.3 3 3 6-6.6" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></button>
-        <button class="lane" type="button" aria-pressed="false" data-lane="Business Coaching"><h3>Business Coaching</h3><p class="who">with Parker &amp; Graeme</p><div class="lane-foot"><span>Course + weekly call</span><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="m2.5 7.3 3 3 6-6.6" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></button>
-        <button class="lane" type="button" aria-pressed="false" data-lane="Yoga &amp; Meditation"><h3>Yoga &amp; Meditation</h3><p class="who">with Melissa</p><div class="lane-foot"><span>Course + weekly call</span><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="m2.5 7.3 3 3 6-6.6" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></button>
-        <button class="lane" type="button" aria-pressed="false" data-lane="AI in Your Business"><h3>AI in Your Business</h3><p class="who">with Luke &amp; Parker</p><div class="lane-foot"><span>Course + weekly call</span><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="m2.5 7.3 3 3 6-6.6" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></button>
-        <button class="lane" type="button" aria-pressed="false" data-lane="AI in Your Life"><h3>AI in Your Life</h3><p class="who">with Luke &amp; Parker</p><div class="lane-foot"><span>Course + weekly call</span><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="m2.5 7.3 3 3 6-6.6" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></button>
-        <div class="lane soon"><h3>More lanes</h3><p class="who">Health is next</p><div class="lane-foot"><span>Coming soon</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEADERS -->
-  <section class="section rule" id="leaders">
-    <div class="wrap">
-      <p class="label">The leaders</p>
-      <h2 class="headline" style="margin-top:22px">Chosen, <span class="serif">not hired.</span></h2>
-      <div class="leaders">
-        <div class="leader"><div class="mono" aria-hidden="true">P</div><h3>Parker</h3><p>Personal Development · Business · AI</p></div>
-        <div class="leader"><div class="mono" aria-hidden="true">G</div><h3>Graeme</h3><p>Business Coaching</p></div>
-        <div class="leader"><div class="mono" aria-hidden="true">M</div><h3>Melissa</h3><p>Yoga &amp; Meditation</p></div>
-        <div class="leader"><div class="mono" aria-hidden="true">L</div><h3>Luke</h3><p>AI in your business and life</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOR / NOT FOR (verbatim, The Ark v02 deck) -->
-  <section class="section rule" id="fit">
-    <div class="wrap">
-      <p class="label">Who this is for</p>
-      <div class="fit">
-        <div><ul>
-          <li>Those who want to live ON PURPOSE without compromise</li>
-          <li>Entrepreneurs seeking community who are uncompromising on whole-life success</li>
-          <li>Those who are more committed to alignment and truth than tied to language and tribalism / dogmatism</li>
-          <li>Those who are seeking truth—not those who already think they have all of it</li>
-        </ul></div>
-        <div class="no"><p class="label">Who this is not for</p><ul>
-          <li>Those who want to hand out business cards at a “networking event”</li>
-        </ul></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MANIFESTO (verbatim lines, ROL Club Teaser v3) -->
-  <section class="section rule" id="manifesto">
-    <div class="wrap">
-      <p class="label">The manifesto</p>
-      <div class="quote-lines">
-        <p>We are the creators. The risk-takers. The ones who build not for permission or applause, but because creation is the nature of life itself.</p>
-        <p>This is a movement for the few who are ready.</p>
-        <p>If you're still waiting to be chosen—you're not ready.</p>
-        <p>But if you've already chosen yourself—</p>
-      </div>
-      <details class="full-mani">
-        <summary>Read the full manifesto</summary>
-        <h2 class="headline" style="margin-top:36px">What We Stand For.</h2>
-        <div class="mani">
-          <p class="ml">We are the creators. The risk-takers. The ones who build not for permission or applause, but because creation is the nature of life itself.</p>
-          <p class="ml">Ambition, vision, and power are not sins. These are signals. Signals that we are alive.</p>
-          <p class="ml label-line">We believe:</p>
-          <p class="ml belief">That wealth is not a vice, but a virtue—when earned by value and integrity.</p>
-          <p class="ml belief">That freedom is not granted by governments, but born from self-responsibility.</p>
-          <p class="ml belief">That community is not forced—it is chosen, forged in shared values and mutual excellence.</p>
-          <p class="ml belief">That energy—relational, creative, financial—is sacred. It must not be wasted, but offered to the highest possible aim.</p>
-          <p class="ml belief">That to love is not to lose yourself in another—but to stand whole, and offer yourself by choice.</p>
-          <p class="ml belief">That your highest potential is not just your right—it is your duty.</p>
-          <p class="ml belief">That to give from abundance is not loss, but overflow—and what you give returns multiplied when it's offered without need or agenda.</p>
-          <p class="ml">We are not here to escape the world. We are here to evolve it.</p>
-          <p class="ml">And as the old world trembles with change—bloated on bureaucracy, addiction, and victimhood—we do not fight it. We simply build what comes next.</p>
-          <p class="ml big">With clarity. With courage. With fire.</p>
-          <p class="ml big">This is not a rebellion.</p>
-          <p class="ml big">This is an expansion—of reason, of responsibility, of reverence.</p>
-          <p class="ml">You are not meant to ask for permission.</p>
-          <p class="ml">You are meant to remember who you are—and build accordingly.</p>
-          <p class="ml">This is a movement for the few who are ready.</p>
-          <p class="ml">We do not welcome all.</p>
-          <p class="ml">We welcome those who know the weight of leadership, the silence of integrity, and the thrill of building what others say is impossible.</p>
-          <p class="ml">If you're still waiting to be chosen—you're not ready.</p>
-          <p class="ml">But if you've already chosen yourself—</p>
-          <p class="ml">Welcome home.</p>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <section class="finale" id="welcome">
-    <div class="bowl" aria-hidden="true">
-      <div class="pool"></div>
-      <div class="halo"><div class="ring"></div></div>
-      <div class="ring"></div>
-    </div>
+  <section class="finale" id="request">
+    <div class="bowl" aria-hidden="true"><div class="pool"></div><div class="halo"><div class="ring"></div></div><div class="ring"></div></div>
     <div class="finale-copy wrap">
-      <p class="welcome-line">Welcome home.</p>
-      <a class="btn btn-white" href="#apply">Apply for membership</a>
-    </div>
-  </section>
-
-  <!-- MEMBERSHIP + APPLICATION -->
-  <section class="section rule" id="apply">
-    <div class="wrap">
-      <div class="price-head">
-        <p class="label">Membership</p>
-        <h2 class="headline">By <span class="serif">application.</span></h2>
-      </div>
-      <div class="card-scene">
-        <div class="member-card" id="member-card" data-reveal>
-          <div class="card-row">
-            <span class="card-brand"><svg viewBox="0 0 24 14" fill="none" aria-hidden="true"><path d="M2 2.5a10 10 0 0 0 20 0" stroke="url(#glint)" stroke-width="2.4" stroke-linecap="round"/></svg>ARK</span>
-            <span>Founding cohort</span>
-          </div>
-          <div class="card-price"><span class="amt">Member</span></div>
-          <div class="card-row"><span>By application</span><span>Est. 2026</span></div>
-        </div>
-      </div>
-
-      <div class="join-panel">
-        <ul class="includes">
-          <li>The main room, with every member</li>
-          <li>Three leaders you choose, each with a course and a weekly call</li>
-          <li>First week free once you're accepted</li>
-          <li>Two invitations to give to people you'd vouch for</li>
-        </ul>
-        <p class="yours" id="yours" hidden></p>
-
+      <div class="request">
+        <p class="welcome-line">Welcome home.</p>
         <form class="apply" id="apply-form" novalidate>
           <div class="row two">
             <label for="a-name">Name<input id="a-name" name="name" type="text" autocomplete="name" required></label>
             <label for="a-email">Email<input id="a-email" name="email" type="email" autocomplete="email" required></label>
           </div>
-          <div class="row two">
-            <label for="a-phone">Phone<input id="a-phone" name="phone" type="tel" autocomplete="tel"></label>
-            <label for="a-code">Invitation code<input id="a-code" class="code" name="code" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Optional" maxlength="24"></label>
-          </div>
+          <label for="a-code">Invitation code<input id="a-code" class="code" name="code" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="If you have one" maxlength="24"></label>
           <label for="a-what">What are you building?<textarea id="a-what" name="what" maxlength="600" required></textarea></label>
-          <button class="btn btn-white" type="submit">Submit application</button>
+          <button class="btn btn-white" type="submit">Request an invitation</button>
           <p class="note" id="note" role="status"></p>
-          <p class="fine">No payment to apply. We read every application. If you're accepted, your first week is free and we'll walk you through membership. A code from a member or leader moves you to the front of the line.</p>
+          <p class="fine">We read every request. Invitations go to one hundred founding members.</p>
         </form>
-      </div>
-
-      <div class="faq" id="faq">
-        <h2>Questions</h2>
-        <details><summary>Do I need a code?</summary><p>No. Anyone can apply. A code from a member or leader moves you to the front of the line.</p></details>
-        <details><summary>How long is the wait?</summary><p>Members join in cohorts. We'll email you when yours opens.</p></details>
-        <details><summary>Is there an app?</summary><p>The Ark app for iPhone and Android is on the way. You apply here, then log in on your phone.</p></details>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap foot-bar">
-    <span>© 2026 Ark Community</span>
-    <span>Membership by application</span>
+  <div class="mani-wrap">
+    <details class="full-mani" id="manifesto">
+      <summary>Read the manifesto</summary>
+      <h2 class="headline" style="margin-top:36px">What We Stand For.</h2>
+      <div class="mani">
+        <p class="ml">We are the creators. The risk-takers. The ones who build not for permission or applause, but because creation is the nature of life itself.</p>
+        <p class="ml">Ambition, vision, and power are not sins. These are signals. Signals that we are alive.</p>
+        <p class="ml label-line">We believe:</p>
+        <p class="ml belief">That wealth is not a vice, but a virtue—when earned by value and integrity.</p>
+        <p class="ml belief">That freedom is not granted by governments, but born from self-responsibility.</p>
+        <p class="ml belief">That community is not forced—it is chosen, forged in shared values and mutual excellence.</p>
+        <p class="ml belief">That energy—relational, creative, financial—is sacred. It must not be wasted, but offered to the highest possible aim.</p>
+        <p class="ml belief">That to love is not to lose yourself in another—but to stand whole, and offer yourself by choice.</p>
+        <p class="ml belief">That your highest potential is not just your right—it is your duty.</p>
+        <p class="ml belief">That to give from abundance is not loss, but overflow—and what you give returns multiplied when it's offered without need or agenda.</p>
+        <p class="ml">We are not here to escape the world. We are here to evolve it.</p>
+        <p class="ml">And as the old world trembles with change—bloated on bureaucracy, addiction, and victimhood—we do not fight it. We simply build what comes next.</p>
+        <p class="ml big">With clarity. With courage. With fire.</p>
+        <p class="ml big">This is not a rebellion.</p>
+        <p class="ml big">This is an expansion—of reason, of responsibility, of reverence.</p>
+        <p class="ml">You are not meant to ask for permission.</p>
+        <p class="ml">You are meant to remember who you are—and build accordingly.</p>
+        <p class="ml">This is a movement for the few who are ready.</p>
+        <p class="ml">We do not welcome all.</p>
+        <p class="ml">We welcome those who know the weight of leadership, the silence of integrity, and the thrill of building what others say is impossible.</p>
+        <p class="ml">If you're still waiting to be chosen—you're not ready.</p>
+        <p class="ml">But if you've already chosen yourself—</p>
+        <p class="ml">Welcome home.</p>
+      </div>
+    </details>
   </div>
+  <div class="wrap foot-bar"><span>© 2026 Ark</span><span>Founding 100 · By invitation</span></div>
 </footer>
 
 <script>
 (function(){
   document.documentElement.classList.add('js');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const clamp = (v,a,b)=>Math.min(b,Math.max(a,v));
-  const scenes = [...document.querySelectorAll('[data-scene]')];
-  const reveals = [...document.querySelectorAll('[data-reveal]')];
-
-  const statement = document.getElementById('statement');
-  const words = [];
-  (function walk(node){
-    [...node.childNodes].forEach(n=>{
-      if(n.nodeType===3){
-        const frag=document.createDocumentFragment();
-        n.textContent.split(/(\s+)/).forEach(tok=>{
-          if(!tok) return;
-          if(/^\s+$/.test(tok)){frag.appendChild(document.createTextNode(tok));return;}
-          const s=document.createElement('span'); s.className='w'; s.textContent=tok; frag.appendChild(s); words.push(s);
-        });
-        n.replaceWith(frag);
-      } else if(n.nodeType===1){ walk(n); }
-    });
-  })(statement);
-
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+  const scenes=[...document.querySelectorAll('[data-scene]')], reveals=[...document.querySelectorAll('[data-reveal]')];
   let ticking=false;
   function update(){
-    ticking=false;
-    const vh=window.innerHeight;
-    scenes.forEach(s=>{
-      const r=s.getBoundingClientRect(); const len=r.height-vh;
-      const p=reduce?0:(len>0? clamp(-r.top/len,0,1) : 0);
-      s.style.setProperty('--p',p.toFixed(4)); s._p=p;
-    });
-    const sp=reduce?1:document.getElementById('why')._p;
-    const lit=Math.floor(clamp(sp/0.75,0,1)*words.length+0.001);
-    words.forEach((w,i)=>w.classList.toggle('on',i<lit));
-    reveals.forEach(el=>{ const r=el.getBoundingClientRect(); const v=reduce?1:clamp((vh-r.top)/(vh*0.55),0,1); el.style.setProperty('--v',v.toFixed(3)); });
+    ticking=false; const vh=innerHeight;
+    scenes.forEach(s=>{const r=s.getBoundingClientRect(),len=r.height-vh; s.style.setProperty('--p',(reduce?0:(len>0?clamp(-r.top/len,0,1):0)).toFixed(4));});
+    reveals.forEach(el=>{const r=el.getBoundingClientRect(); el.style.setProperty('--v',(reduce?1:clamp((vh-r.top)/(vh*0.6),0,1)).toFixed(3));});
   }
-  const req=()=>{ if(!ticking){ ticking=true; requestAnimationFrame(update); } };
-  addEventListener('scroll',req,{passive:true});
-  addEventListener('resize',req);
-  update();
-
-  const card=document.getElementById('member-card');
-  if(!reduce && matchMedia('(hover:hover)').matches){
-    card.addEventListener('pointermove',e=>{ const r=card.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
-      card.style.setProperty('--ry',(x*10).toFixed(2)+'deg'); card.style.setProperty('--rx',(-y*8).toFixed(2)+'deg'); });
-    card.addEventListener('pointerleave',()=>{ card.style.setProperty('--ry','0deg'); card.style.setProperty('--rx','0deg'); });
-  }
-
-  const picks=[]; const lanes=[...document.querySelectorAll('button.lane')];
-  const pips=[...document.querySelectorAll('.pip')];
-  const status=document.getElementById('pick-status'); const yours=document.getElementById('yours');
-  const listText=a=>a.length<2? a.join('') : a.slice(0,-1).join(', ')+' and '+a[a.length-1];
-  function render(msg){
-    lanes.forEach(b=>{ const on=picks.includes(b.dataset.lane); b.setAttribute('aria-pressed',on?'true':'false'); b.classList.toggle('locked',!on&&picks.length===3); });
-    pips.forEach((p,i)=>p.classList.toggle('on',i<picks.length));
-    status.textContent = msg || (picks.length===0? 'Try it. Tap three lanes.' : picks.length<3? `${picks.length} of 3 picked` : 'Your three: '+listText(picks));
-    if(picks.length===3){ yours.hidden=false; yours.innerHTML='Your three: <strong></strong>'; yours.querySelector('strong').textContent=listText(picks); } else { yours.hidden=true; }
-  }
-  lanes.forEach(b=>b.addEventListener('click',()=>{
-    const n=b.dataset.lane, i=picks.indexOf(n);
-    if(i>-1){ picks.splice(i,1); render(); return; }
-    if(picks.length===3){ render("You've picked three. Tap one to swap it out."); return; }
-    picks.push(n); render();
-  }));
-
+  const req=()=>{if(!ticking){ticking=true;requestAnimationFrame(update);}};
+  addEventListener('scroll',req,{passive:true}); addEventListener('resize',req); update();
   const form=document.getElementById('apply-form'), note=document.getElementById('note');
   form.addEventListener('submit',e=>{
     e.preventDefault();
-    const bad=[...form.querySelectorAll('[required]')].find(el=>!el.value.trim() || (el.type==='email' && !/^\S+@\S+\.\S+$/.test(el.value)));
-    if(bad){ note.textContent = bad.type==='email'? 'Enter a valid email so we can reach you.' : 'Fill in your name, email, and what you are building.'; bad.focus(); return; }
-    note.textContent = "Applications open with the founding cohort. This form isn't connected yet, so nothing was sent.";
+    const bad=[...form.querySelectorAll('[required]')].find(el=>!el.value.trim()||(el.type==='email'&&!/^\S+@\S+\.\S+$/.test(el.value)));
+    if(bad){note.textContent=bad.type==='email'?'Enter a valid email so we can reach you.':'Add your name, email, and what you are building.';bad.focus();return;}
+    note.textContent="Requests open with the founding cohort. This form isn't connected yet, so nothing was sent.";
   });
 })();
 </script>
